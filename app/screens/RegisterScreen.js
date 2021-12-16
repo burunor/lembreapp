@@ -29,7 +29,7 @@ const validationSchema = Yup.object().shape({
 function RegisterScreen(props) {
   return (
     <Screen style={styles.screen}>
-      <Text style={[defaultStyles.text, styles.text]}>Cadastro de Usuário</Text>
+      {/* <Text style={[defaultStyles.text, styles.text]}>Cadastro de Usuário</Text> */}
 
       <AppForm
         initialValues={{

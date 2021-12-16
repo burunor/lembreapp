@@ -6,30 +6,24 @@ import colors from "../config/colors";
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.logoContainer}>
+      {/* <View style={styles.logoContainer}>
         <AppText>Lembre APP</AppText>
-      </View>
+      </View> */}
 
-      <View style={styles.buttonContainer}>
-        <AppButton
-          style={{ color: colors.light }}
-          title={"Login"}
-          onPress={() =>
-            Alert.alert("Encaminhamento para LoginScreen pendente")
-          }
-        />
+      <AppButton
+        style={{ color: colors.light }}
+        title={"Login"}
+        onPress={() => navigation.navigate("LoginScreen")}
+      />
 
-        <AppButton
-          title={"Register"}
-          onPress={() =>
-            Alert.alert("Encaminhamento para RegisterScreen pendente")
-          }
-        />
-      </View>
+      <AppButton
+        title={"Cadastre-se"}
+        onPress={() => navigation.navigate("RegisterScreen")}
+      />
     </View>
   );
 }
@@ -41,12 +35,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     color: colors.secondary,
+    paddingHorizontal: 20,
   },
   logoContainer: {
     marginBottom: 50,
-  },
-  buttonContainer: {
-    width: "50%",
   },
 });
 
